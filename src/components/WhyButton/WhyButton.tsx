@@ -1,19 +1,15 @@
-import React, { MouseEvent } from "react";
-
-const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-
-
-  console.log(event.clientX, event.clientY);
-
-
-};
+import React, { MouseEvent, useState } from "react";
 
 const WhyButton = () => {
-  return (
-    <button onClick={handleClick}>
-      why, tho
-    </button>
-  );
+  const [pressed, setPressed] = useState(false);
+
+  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+    setPressed(!pressed);
+    console.log(event.clientX, event.clientY);
+  };
+  return <button onClick={handleClick}>
+          {pressed ? "but why, tho?" : "why?"}
+    </button>;
 };
 
-export default WhyButton
+export default WhyButton;
