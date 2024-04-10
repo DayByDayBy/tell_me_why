@@ -1,3 +1,0 @@
-interface ResponseText {
-    text: string;
-  }

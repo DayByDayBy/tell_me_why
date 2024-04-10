@@ -1,7 +1,7 @@
 
-import styled from 'styled-components/native';
+import styled from 'styled-components';
 
-export const TextContainer = styled.Text`
+export const TextContainer = styled.div`
   font-size: 18px;
   margin: 12px;
   padding: 36px;
