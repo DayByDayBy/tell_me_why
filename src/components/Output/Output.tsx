@@ -34,8 +34,6 @@ const Output: React.FC<ResponseText> = () => {
 
           <p>text goes here, here goes text: tell you what, maybe even some stuff worth reading eventually, after some fiddling and tweaking</p>
 
-          <p>you can press it if you want, but it's just a ternary with more placeholder text to make it feel like something happened</p>
-
       </TextContainer>
     );
 }
