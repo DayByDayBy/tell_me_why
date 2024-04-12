@@ -17,12 +17,12 @@ const WhyButton: React.FC<WhyButtonProps>= ({ setResponseText }) => {
 });
 
     setResponseText(response.message.content);
-    setCount();
+    setCount(count + 1);
 
 };
 
-  return <button onClick={ handleClick, setCount }>
-          {pressed ? "but why, tho?" : "why?"}
+  return <button onClick={ handleClick }>
+          {(count!=0) ? "ok, but why?" : "why?"}
     </button>;
 };
 
