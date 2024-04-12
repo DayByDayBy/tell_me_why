@@ -1,24 +1,22 @@
-import React, { MouseEvent, useState } from "react";
-import { Ollama } from "ollama";
+import React, { useState } from "react";
+import { ollama } from "ollama/browser";
 
 const WhyButton = ({ setResponseText }) => {
   const [pressed, setPressed] = useState(false);
 
   const handleClick = async () => {
-    const response = await Ollama.chat({
+    const response = await ollama.chat({
       model: 'llama2',
       messages: [{ role: 'user', content: 'Why is the sky blue?' }],
 });
 
     setResponseText(response.message.content);
+    setPressed(!pressed);
 
 };
 
-    (event: MouseEvent<HTMLButtonElement>) => {
-    setPressed(!pressed);
-    console.log(event.clientX, event.clientY);
-  };
-  return <button onClick={handleClick}>
+
+  return <button onClick={ handleClick }>
           {pressed ? "but why, tho?" : "why?"}
     </button>;
 };
