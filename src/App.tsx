@@ -1,8 +1,7 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import WhyButton from "./components/WhyButton/WhyButton";
-import Output from "./components/Output/Output";
+import Home from "./pages/Home/Home";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,7 +9,7 @@ function App() {
   return (
     <>
       <div>
-        <Output />
+        <Home />
 
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
@@ -21,8 +20,6 @@ function App() {
           count is {count}
         </button>
       </div>
-
-      <WhyButton />
     </>
   );
 }
