@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
 import { TextContainer } from './Output.styles';
 
-interface ResponseText {
+interface OutputProps {
   text: string;
 }
 
-
-const Output: React.FC<ResponseText> = () => {
-  const [responseText, setResponseText] = useState('');
+const Output: React.FC<OutputProps> = ({text}) => {
+  const [responseText] = useState('');
 
         return (
       <TextContainer>
        
-       {responseText ? (
-        <p>{responseText}</p>
+       {text ? (
+        <p> { text } </p>
        ) : (
-        <p>text goes here, here goes text: tell you what, maybe even some stuff worth reading eventually, after some fiddling and tweaking</p>
+        <>
+        <p>loading......</p>
+        <br></br>
+        <p>(it can take a moment) </p>
+        </>
        )}
 
       </TextContainer>
@@ -23,3 +26,6 @@ const Output: React.FC<ResponseText> = () => {
 }
 
 export default Output;
+
+
+

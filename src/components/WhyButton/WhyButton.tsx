@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import { ollama } from "ollama/browser";
+import ollama from 'ollama/browser';
 
-const WhyButton = ({ setResponseText }) => {
-  const [pressed, setPressed] = useState(false);
+console.log(ollama);
 
+interface WhyButtonProps{
+  setResponseText: (responseText: string) => void;
+}
+
+const WhyButton: React.FC<WhyButtonProps>= ({ setResponseText }) => {
+  const [count, setCount] = useState(0);
+  
   const handleClick = async () => {
     const response = await ollama.chat({
       model: 'llama2',
@@ -11,12 +17,11 @@ const WhyButton = ({ setResponseText }) => {
 });
 
     setResponseText(response.message.content);
-    setPressed(!pressed);
+    setCount();
 
 };
 
-
-  return <button onClick={ handleClick }>
+  return <button onClick={ handleClick, setCount }>
           {pressed ? "but why, tho?" : "why?"}
     </button>;
 };

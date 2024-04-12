@@ -3,13 +3,16 @@ import WhyButton from '../../components/WhyButton/WhyButton';
 import Output from '../../components/Output/Output';
 
 
-const Home = () =>{
+
+const Home: React.FC = () =>{
+
     const [responseText, setResponseText] = useState('');
 
     return (
         <div>
-            <Output responseText = {responseText}/>
+            <Output text = {responseText}/>
             <WhyButton setResponseText = {setResponseText}/>
+
         </div>
     )
 }
