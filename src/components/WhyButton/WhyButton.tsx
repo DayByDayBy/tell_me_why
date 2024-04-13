@@ -18,12 +18,12 @@ const WhyButton: React.FC<WhyButtonProps> = ({
 
   const handleClick = async () => {
     const response = await ollama.chat({
-      model: "mistral",
+      model: "llama2",
+      // context: [latestResponse],
       messages: [
         {
           role: "user",
-          context: [latestResponse]
-          content: "i understand that" + latestResponse + " But why?",
+          content: "i undertand that " + latestResponse + ", but why?",
         },
       ],
     });
