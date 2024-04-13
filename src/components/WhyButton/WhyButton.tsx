@@ -22,7 +22,8 @@ const WhyButton: React.FC<WhyButtonProps> = ({
       messages: [
         {
           role: "user",
-          content: "okay, so i understand that" + latestResponse + " But why?",
+          context: [latestResponse]
+          content: "i understand that" + latestResponse + " But why?",
         },
       ],
     });

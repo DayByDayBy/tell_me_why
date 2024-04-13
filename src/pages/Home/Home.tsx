@@ -12,6 +12,11 @@ const Home: React.FC = () => {
       const response = await ollama.chat({
         model: "mistral",
         stream: false,
+        eval_count: 150,
+        context: [1,2,3],
+        options:{
+          temperature: 0.667,
+        },
         messages: [
           {
             role: "user",
