@@ -11,6 +11,6 @@ export const TextContainer = styled.div`
   border-width: 1px;
   border-color: #8b8c74;
   border-radius: 2rem;
-  background-color: white;
-  overflow: hidden;
+  background-color: #f9f9f9;
+  overflow: scroll;
 `;

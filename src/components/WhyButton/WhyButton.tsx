@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ollama from "ollama/browser";
+import { Button } from "./WhyButton.styles";
 
 console.log(ollama);
 
@@ -14,26 +15,10 @@ const WhyButton: React.FC<WhyButtonProps> = ({
 }) => {
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await ollama.chat({
-        model: "llama2",
-        stream: false,
-        messages: [
-          {
-            role: "user",
-            content: "Tell me a weird fact, something that i might not know.",
-          },
-        ],
-      });
-      setResponseText(response.message.content);
-    }
-    fetchData();
-  }, [latestResponse, setResponseText]);
 
   const handleClick = async () => {
     const response = await ollama.chat({
-      model: "llama2",
+      model: "mistral",
       messages: [
         {
           role: "user",
@@ -47,9 +32,9 @@ const WhyButton: React.FC<WhyButtonProps> = ({
   };
 
   return (
-    <button onClick={handleClick}>
+    <Button onClick={handleClick}>
       {count != 0 ? "ok, but why?" : "why?"}
-    </button>
+    </Button>
   );
 };
 
