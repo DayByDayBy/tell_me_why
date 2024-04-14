@@ -12,9 +12,9 @@ const Output: React.FC<OutputProps> = ({ text }) => {
         <p> {text} </p>
       ) : (
         <>
-          <p>loading......</p>
+          <p>loading.....</p>
           <br></br>
-          <p>(it can take a moment) </p>
+          <p>(it can take a moment or two) </p>
         </>
       )}
     </TextContainer>

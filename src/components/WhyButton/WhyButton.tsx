@@ -18,12 +18,12 @@ const WhyButton: React.FC<WhyButtonProps> = ({
 
   const handleClick = async () => {
     const response = await ollama.chat({
-      model: "llama2",
+      model: "mistral",
       // context: [latestResponse],
       messages: [
         {
           role: "user",
-          content: "i undertand that " + latestResponse + ", but why?",
+          content: latestResponse + ' is interesting, tell me more. stay under 100 words.',
         },
       ],
     });
@@ -34,7 +34,7 @@ const WhyButton: React.FC<WhyButtonProps> = ({
 
   return (
     <Button onClick={handleClick}>
-      {count != 0 ? "ok, but why?" : "why?"}
+      {count != 0 ? "go on" : "tell me more"}
     </Button>
   );
 };

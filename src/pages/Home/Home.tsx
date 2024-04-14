@@ -10,16 +10,16 @@ const Home: React.FC = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await ollama.chat({
-        model: "llama2",
+        model: "mistral",
         stream: false,
-        eval_count: 50,
+        max_tokens: 20,
         options:{
           temperature: 0.667,
         },
         messages: [
           {
             role: "user",
-            content: "what makes the sun shine?",
+            content: "describe a concept most lay-people do not know, in 100 words or less",
           },
         ],
       });
@@ -30,7 +30,7 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <h1>tell me why</h1>
+      <h1>tell me {! responseText ? 'something' : 'why'}</h1>
       <h2> a needless machine </h2>
       <Output text={responseText} />
       <WhyButton
