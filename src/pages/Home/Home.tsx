@@ -14,12 +14,12 @@ const Home: React.FC = () => {
         stream: false,
         max_tokens: 20,
         options:{
-          temperature: 0.667,
+          temperature: 0.7,
         },
         messages: [
           {
             role: "user",
-            content: "describe a concept most lay-people do not know, in 100 words or less",
+            content: "describe a cool concept that most lay-people do not know, in 100 words or less",
           },
         ],
       });

@@ -20,10 +20,12 @@ const WhyButton: React.FC<WhyButtonProps> = ({
     const response = await ollama.chat({
       model: "mistral",
       // context: [latestResponse],
-      messages: [
+      options:{
+        temperature: 0.9,
+      },      messages: [
         {
           role: "user",
-          content: latestResponse + ' is interesting, tell me more. stay under 100 words.',
+          content: 'you said ' + latestResponse + ' staying under 100 words, tell me more about that last thing. feel free to add related topics.',
         },
       ],
     });

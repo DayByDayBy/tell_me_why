@@ -1,8 +1,9 @@
 #root {
   display: flex;
   max-width: auto;
-  margin: auto;
-  padding: 2rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 1rem;
   text-align: center;
 }
 

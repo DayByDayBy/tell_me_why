@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 export const TextContainer = styled.div`
   text-align: center;
+  justify-self: start;
   font-size: 16px;
   margin: 1rem 3rem 1rem 3rem;
-  padding: 1rem;
-  max-height: 40vh;
+  padding: 2rem;
+  height: 30vh;
   color: #000;
   border-width: 1px;
   border-style: solid;
