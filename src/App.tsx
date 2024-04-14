@@ -1,5 +1,6 @@
 import "./App.css";
 import Home from "./pages/Home/Home";
+import Contact from "./components/Contact/Contact";
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <div>
         <Home />
+        <Contact />
       </div>
 
     </>

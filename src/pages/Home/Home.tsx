@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ollama from "ollama/browser";
 import WhyButton from "../../components/WhyButton/WhyButton";
 import Output from "../../components/Output/Output";
+import Contact from "../../components/Contact/Contact";
 
 const Home: React.FC = () => {
   const [responseText, setResponseText] = useState('');
@@ -29,6 +30,7 @@ const Home: React.FC = () => {
   }, []);
 
   return (
+    <>
     <div>
       <h1>tell me {! responseText ? 'something' : 'more'}</h1>
       <h2> a needless machine </h2>
@@ -38,6 +40,8 @@ const Home: React.FC = () => {
         latestResponse={responseText}
       />
     </div>
+  
+    </>
   );
 };
 

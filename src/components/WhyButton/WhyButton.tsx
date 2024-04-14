@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ollama from "ollama/browser";
 import { Button } from "./WhyButton.styles";
 
-console.log(ollama);
+// console.log(ollama);
 
 interface WhyButtonProps {
   setResponseText: (responseText: string) => void;
