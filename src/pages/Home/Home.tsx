@@ -30,7 +30,7 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <h1>tell me {! responseText ? 'something' : 'why'}</h1>
+      <h1>tell me {! responseText ? 'something' : 'more'}</h1>
       <h2> a needless machine </h2>
       <Output text={responseText} />
       <WhyButton
