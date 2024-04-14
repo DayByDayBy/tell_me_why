@@ -8,6 +8,7 @@ export const TextContainer = styled.div`
   font-size: 14px;
   margin: 1rem 3rem;
   padding: 1rem;
+  max-width: 60vh;
   height: 35vh;
   color: #000;
   border-width: 1px solid #8b8c74 ;
