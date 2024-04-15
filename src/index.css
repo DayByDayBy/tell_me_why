@@ -31,6 +31,17 @@ body {
 h1 {
   font-size: 3.2em;
 }
+p{
+  display: block;
+}
+
+.fadeOn {
+  animation: fade-in 500ms forwards;
+}
+
+.fadeOut{
+  animation: fade-out 500ms forwards;
+}
 
 button {
   border-radius: 8px;
