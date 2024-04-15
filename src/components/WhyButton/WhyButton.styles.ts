@@ -7,7 +7,7 @@ export const Button = styled.button`
   color: #000;
   border-width: 1px;
   border: solid;
-  border-color: #8b8c74;
+  border-color: #91c2c2;
   border-radius: 1rem;
-  background-color: #f9f9f9;
+  background: linear-gradient(to bottom left , #80bfbf, #ccffff, #2424);
 `;

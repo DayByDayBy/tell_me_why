@@ -13,7 +13,7 @@ const Contact = () => {
         </a>
         </div>
         <p>
-        an Ollama-based LLM botherer, thrown together by{" "}
+        an Ollama-based LLM-botherer, thrown together by{" "}
         <a href="http://boag.dev" target="_blank" rel="noopener noreferrer">
           Бог
         </a>

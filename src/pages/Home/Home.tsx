@@ -3,6 +3,7 @@ import ollama from "ollama/browser";
 import WhyButton from "../../components/WhyButton/WhyButton";
 import Output from "../../components/Output/Output";
 import Contact from "../../components/Contact/Contact";
+import { TitleBox } from "./Home.styles";
 
 const Home: React.FC = () => {
   const [responseText, setResponseText] = useState('');
@@ -32,7 +33,7 @@ const Home: React.FC = () => {
   return (
     <>
     <div>
-      <h1>tell me {! responseText ? 'something' : 'more'}</h1>
+      <TitleBox>tell me {! responseText ? 'something' : 'more'}</TitleBox>
       <h2> a needless machine </h2>
       <Output text={responseText} />
       <WhyButton
