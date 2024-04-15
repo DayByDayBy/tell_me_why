@@ -14,7 +14,6 @@ const Home: React.FC = () => {
       const response = await ollama.chat({
         model: "mistral",
         stream: false,
-        max_tokens: 20,
         options:{
           temperature: 0.7,
         },
@@ -41,6 +40,7 @@ const Home: React.FC = () => {
         latestResponse={responseText}
       />
     </div>
+    <Contact />
   
     </>
   );

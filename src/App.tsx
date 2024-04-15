@@ -8,7 +8,7 @@ function App() {
     <>
       <div>
         <Home />
-        <Contact />
+
       </div>
 
     </>
