@@ -4,6 +4,7 @@ import WhyButton from "../../components/WhyButton/WhyButton";
 import Output from "../../components/Output/Output";
 import Contact from "../../components/Contact/Contact";
 import { TitleBox } from "./Home.styles";
+import DropDown from "../../components/DropDown/DropDown";
 
 const Home: React.FC = () => {
   const [responseText, setResponseText] = useState('');
@@ -40,6 +41,7 @@ const Home: React.FC = () => {
         latestResponse={responseText}
       />
     </div>
+
     <Contact />
   
     </>
