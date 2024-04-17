@@ -18,7 +18,7 @@ const WhyButton: React.FC<WhyButtonProps> = ({
 
   const handleClick = async () => {
     const response = await ollama.chat({
-      model: "mistral",
+      model: "gemma",
       // context: [latestResponse],
       options:{
         temperature: 0.9,
