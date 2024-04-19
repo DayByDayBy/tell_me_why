@@ -13,7 +13,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await ollama.chat({
-        model: "gemma",
+        model: "mistral",
         stream: false,
         options:{
           temperature: 0.7,
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
   return (
     <>
     <div>
-    <DropDown/>
+    
 
       <TitleBox>tell me {! responseText ? 'something' : 'more'}</TitleBox>
       <h2> a needless machine </h2>
