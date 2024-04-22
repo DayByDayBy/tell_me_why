@@ -30,6 +30,12 @@ const response = await ollama.chat({
 
 i am currently running the code found here locally as a sort of 'fun fact' interface, an alternative to the command line ollama models i have installed that i can have open as a tab. i've been throwing different model names in, occasionally changing the initial prompt, etc, an generally seeing how to make it do interesting things
 
+if you do play with different models, bear in mind they will need to be on your machine. you can make sure you have a given model, just run this in your command line:
+
+```ollama run <model-name>```
+
+this will start the model if you already have it, but it will say 'pulling manifest' if you do not. if so, wait for that to complete, and you can then then call it from the code
+
 
 
 

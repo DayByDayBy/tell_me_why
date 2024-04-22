@@ -12,7 +12,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await ollama.chat({
-        model: "mistral",
+        model: "dolphin",
         stream: false,
         options:{
           temperature: 0.7,
