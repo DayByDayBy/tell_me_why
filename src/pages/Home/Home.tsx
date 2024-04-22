@@ -40,10 +40,10 @@ const Home: React.FC = () => {
           setResponseText={setResponseText}
           latestResponse={responseText}
         />
-        <MoreButton
+        {/* <MoreButton
           setResponseText={setResponseText}
           latestResponse={responseText}
-        />
+        /> */}
       </div>
 
       <Contact />
