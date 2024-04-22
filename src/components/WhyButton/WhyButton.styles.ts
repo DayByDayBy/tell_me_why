@@ -11,3 +11,12 @@ export const Button = styled.button`
   border-radius: 1rem;
   background: linear-gradient(to bottom left , #80bfbf, #ccffff, #2424);
 `;
+
+export const PromptCount = styled.p`
+
+border: solid;
+border-color: #91c2c2;
+border-radius: 1rem;
+background: #2424;
+margin: 1rem 16rem;
+`;

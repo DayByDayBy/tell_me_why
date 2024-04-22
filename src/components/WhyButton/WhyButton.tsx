@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ollama from "ollama/browser";
-import { Button } from "./WhyButton.styles";
+import { Button, PromptCount } from "./WhyButton.styles";
 
 // console.log(ollama);
 
@@ -21,11 +21,11 @@ const WhyButton: React.FC<WhyButtonProps> = ({
       model: "mistral",
       // context: [latestResponse],
       options:{
-        temperature: 0.9,
+        temperature: 0.8,
       },      messages: [
         {
           role: "user",
-          content: 'you said ' + latestResponse + ' staying under 100 words, tell me more about that last thing. feel free to add related topics.',
+          content: 'you said ' + `"` + latestResponse + `"` + ' in less than 100 words, tell me more about that last sentence.',
         },
       ],
     });
@@ -35,9 +35,12 @@ const WhyButton: React.FC<WhyButtonProps> = ({
   };
 
   return (
+    <>
     <Button onClick={handleClick}>
       {count != 0 ? "go on" : "tell me more"}
     </Button>
+     <PromptCount>{count}</PromptCount>
+    </>
   );
 };
 
