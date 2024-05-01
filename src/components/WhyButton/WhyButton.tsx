@@ -15,17 +15,16 @@ const WhyButton: React.FC<WhyButtonProps> = ({
 }) => {
   const [count, setCount] = useState(0);
 
-
   const handleClick = async () => {
     const response = await ollama.chat({
-      model: "mistral",
+      model: "llama2",
       // context: [latestResponse],
       options:{
-        temperature: 0.8,
+        temperature: 0.5,
       },      messages: [
         {
           role: "user",
-          content: 'you said ' + `"` + latestResponse + `"` + ' in less than 100 words, tell me more about that last sentence.',
+          content: 'you said ' + `"` + latestResponse + `"` + ' in less than 100 words, tell me more about that last thing you mentioned.',
         },
       ],
     });
