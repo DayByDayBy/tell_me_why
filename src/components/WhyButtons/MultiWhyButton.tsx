@@ -24,6 +24,8 @@ const MultiWhyButton: React.FC<WhyButtonProps> = ({
   const handleButtonClick = async () => {
     const repeatCount = repeatMultiplier * 1;
     const cachedResponses: string[] = [];
+    const formattedDateTime = new Date().toISOString().replace(/:/g, '');
+
     let currentResponse = latestResponse;
     for (let i = 0; i < repeatCount; i++) {
       try {
@@ -52,7 +54,7 @@ const MultiWhyButton: React.FC<WhyButtonProps> = ({
     }
 
     console.log(cachedResponses);
-    const filePath = 'output.txt'; // Define the path to the output file
+    const filePath = `output_${formattedDateTime}.txt`; // Define the path to the output file
 
     fs.writeFile(filePath, cachedResponses.join('\n'), (err) => {
         if (err) {
