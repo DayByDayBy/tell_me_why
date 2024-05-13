@@ -17,14 +17,18 @@ const WhyButton: React.FC<WhyButtonProps> = ({
 
   const handleClick = async () => {
     const response = await ollama.chat({
-      model: "llama2",
+      model: "llama3",
       // context: [latestResponse],
       options:{
         temperature: 0.5,
       },      messages: [
         {
           role: "user",
-          content: 'you said ' + `"` + latestResponse + `"` + ' in less than 100 words, tell me more about that last thing you mentioned.',
+          content:
+          `you said 
+          "${latestResponse}"; 
+          in less than 100 words, tell me more about that last thing you mentioned.`
+
         },
       ],
     });

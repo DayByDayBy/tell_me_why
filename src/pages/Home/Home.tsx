@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ollama from "ollama/browser";
-import WhyButton from "../../components/WhyButton/WhyButton";
-import MoreButton from "../../components/MoreButton/MoreButton";
+import WhyButton from "../../components/WhyButtons/WhyButton";
+import MultiWhyButton from "../../components/WhyButtons/MultiWhyButton";
 import Output from "../../components/Output/Output";
 import Contact from "../../components/Contact/Contact";
 import { TitleBox } from "./Home.styles";
@@ -12,10 +12,10 @@ const Home: React.FC = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await ollama.chat({
-        model: "llama2",
+        model: "llama3",
         stream: false,
         options: {
-          temperature: 0.5,
+          temperature: 0.9,
         },
         messages: [
           {
@@ -36,10 +36,16 @@ const Home: React.FC = () => {
         <TitleBox>tell me {!responseText ? "something" : "more"}</TitleBox>
         <h2> a needless machine </h2>
         <Output text={responseText} />
-        <WhyButton
+
+        {/* <WhyButton
+          setResponseText={setResponseText}
+          latestResponse={responseText}
+        /> */}
+        <MultiWhyButton
           setResponseText={setResponseText}
           latestResponse={responseText}
         />
+        
         {/* <MoreButton
           setResponseText={setResponseText}
           latestResponse={responseText}
