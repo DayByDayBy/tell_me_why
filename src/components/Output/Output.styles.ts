@@ -37,9 +37,9 @@ export const TextContainer = styled.div`
 
 export const LoadingP = styled.p`
   margin: 1rem 0;
-  animation: ${fadeOut} 1500ms forwards;
+  animation: ${fadeOut} 3500ms forwards;
 `;
 
 export const ResponseP = styled.p`
-  animation: ${fadeIn} 2000ms linear;
+  animation: ${fadeIn} 1000ms linear;
 `;

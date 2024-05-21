@@ -15,7 +15,7 @@ const Home: React.FC = () => {
         model: "llama3",
         stream: false,
         options: {
-          temperature: 0.9,
+          temperature: 0.95,
         },
         messages: [
           {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ollama from "ollama/browser";
-import fs from 'fs';
+// import { Ollama } from "ollama";
+// import fs from 'fs';
 
 
 interface WhyButtonProps {
@@ -22,6 +23,7 @@ const MultiWhyButton: React.FC<WhyButtonProps> = ({
   };
 
   const handleButtonClick = async () => {
+    
     const repeatCount = repeatMultiplier * 1;
     const cachedResponses: string[] = [];
     const formattedDateTime = new Date().toISOString().replace(/:/g, '');
@@ -29,6 +31,7 @@ const MultiWhyButton: React.FC<WhyButtonProps> = ({
     let currentResponse = latestResponse;
     for (let i = 0; i < repeatCount; i++) {
       try {
+
         const response = await ollama.chat({
           model: "llama3",
           // context: [currentResponse],
@@ -54,15 +57,16 @@ const MultiWhyButton: React.FC<WhyButtonProps> = ({
     }
 
     console.log(cachedResponses);
-    const filePath = `output_${formattedDateTime}.txt`; // Define the path to the output file
 
-    fs.writeFile(filePath, cachedResponses.join('\n'), (err) => {
-        if (err) {
-          console.error('An error occurred while writing to file:', err);
-        } else {
-          console.log('Output written to file successfully!');
-        }
-      });
+    // const filePath = `output_${formattedDateTime}.txt`; // Define the path to the output file
+
+    // fs.writeFile(filePath, cachedResponses.join('\n'), (err) => {
+    //     if (err) {
+    //       console.error('An error occurred while writing to file:', err);
+    //     } else {
+    //       console.log('Output written to file successfully!');
+    //     }
+    //   });
     };
 
 
