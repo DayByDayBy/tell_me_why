@@ -23,7 +23,7 @@ const MultiWhyButton: React.FC<WhyButtonProps> = ({
   };
 
   const handleButtonClick = async () => {
-    
+        
     const repeatCount = repeatMultiplier * 1;
     const cachedResponses: string[] = [];
     const formattedDateTime = new Date().toISOString().replace(/:/g, '');
@@ -67,8 +67,25 @@ const MultiWhyButton: React.FC<WhyButtonProps> = ({
     //       console.log('Output written to file successfully!');
     //     }
     //   });
-    };
 
+    try {
+      const response = await fetch('http://localhost:3001/save-responses', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ responses: cachedResponses }),
+      });
+
+      if (response.ok) {
+        console.log('Responses saved successfully');
+      } else {
+        console.error('Error saving responses:', response.statusText);
+      }
+    } catch (error) {
+      console.error('An error occurred while saving responses:', error);
+    }
+  };
 
   return (
     <div>
