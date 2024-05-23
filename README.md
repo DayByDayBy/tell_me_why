@@ -34,7 +34,7 @@ if you do play with different models, bear in mind they will need to be on your 
 
 ```ollama run <model-name>```
 
-this will start the model if you already have it, but it will say 'pulling manifest' if you do not. if so, wait for that to complete, and you can then then call it from the code
+this will start the model if you already have it, but it will say 'pulling manifest' if you do not. if so, wait for that to complete, and you can then call it from the code
 
 
 
