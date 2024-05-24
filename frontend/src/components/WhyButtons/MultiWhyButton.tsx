@@ -21,9 +21,9 @@ const MultiWhyButton: React.FC<WhyButtonProps> = ({
     const value = parseInt(event.target.value, 10);
     setRepeatMultiplier(value);
   };
+    // const [count, setCount] = useState(0);
 
   const handleButtonClick = async () => {
-        
     const repeatCount = repeatMultiplier * 1;
     const cachedResponses: string[] = [];
     const formattedDateTime = new Date().toISOString().replace(/:/g, '');
@@ -50,12 +50,13 @@ const MultiWhyButton: React.FC<WhyButtonProps> = ({
         setResponseText(currentResponse);
         cachedResponses.push(currentResponse);
         
+        
       } catch (error) {
         console.error("An error occurred while fetching response:", error);
         break;
       }
+      setCount(count + 1);
     }
-
     console.log(cachedResponses);
 
     // const filePath = `output_${formattedDateTime}.txt`; // Define the path to the output file
@@ -95,7 +96,12 @@ const MultiWhyButton: React.FC<WhyButtonProps> = ({
           <option key={option} value={option}>{`${option}x`}</option>
         ))}
       </select>
+
+      {/* <p>iterations: {count}</p> */}
+
+  
     </div>
+
   );
 };
 
