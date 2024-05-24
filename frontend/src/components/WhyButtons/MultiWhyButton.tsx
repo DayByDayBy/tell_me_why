@@ -55,7 +55,7 @@ const MultiWhyButton: React.FC<WhyButtonProps> = ({
         console.error("An error occurred while fetching response:", error);
         break;
       }
-      setCount(count + 1);
+      // setCount(count + 1);
     }
     console.log(cachedResponses);
 
