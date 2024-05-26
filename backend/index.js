@@ -8,8 +8,8 @@ const app = express();
 const port = 3001;
 
 app.use(cors());
-app.use(bodyParser.json());
-
+app.use(bodyParser.json({ limit: '50mb' }));
+  
 app.post('/save-responses', (req, res) => {
   const { responses } = req.body;
   const formattedDateTime = new Date().toISOString().replace(/:/g, '');
