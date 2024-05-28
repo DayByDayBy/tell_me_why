@@ -10,6 +10,9 @@ const port = 3001;
 app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
   
+//  please note filename refledcts model being 70B, which it was not initially
+//  this will need/want changed back if model is changed back
+
 app.post('/save-responses', (req, res) => {
   const { responses } = req.body;
   const formattedDateTime = new Date().toISOString().replace(/:/g, '');
