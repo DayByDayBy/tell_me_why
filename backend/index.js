@@ -13,7 +13,7 @@ app.use(bodyParser.json({ limit: '50mb' }));
 app.post('/save-responses', (req, res) => {
   const { responses } = req.body;
   const formattedDateTime = new Date().toISOString().replace(/:/g, '');
-  const filePath = path.join(__dirname, `output_${formattedDateTime}.txt`);
+  const filePath = path.join(__dirname, `70B_output_${formattedDateTime}.txt`);
 
   fs.writeFile(filePath, responses.join('\n'), (err) => {
     if (err) {

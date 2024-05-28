@@ -33,7 +33,7 @@ const MultiWhyButton: React.FC<WhyButtonProps> = ({
       try {
 
         const response = await ollama.chat({
-          model: "llama3",
+          model: "llama3:70b",
           // context: [currentResponse],
           options: {
             temperature: 0.5,
